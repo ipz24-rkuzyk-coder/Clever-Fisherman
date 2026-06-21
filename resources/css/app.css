@@ -5,8 +5,14 @@
 
 @theme {
   --font-sans:
-    Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    Manrope, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-display: 'Fraunces', Georgia, serif;
+
+  --color-ocean-950: #04131f;
+  --color-ocean-900: #0a2233;
+  --color-ocean-800: #12384f;
 }
 
 /*
@@ -24,5 +30,21 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top, rgba(34, 211, 238, 0.1), transparent 28%),
+      linear-gradient(180deg, #04131f 0%, #071b28 48%, #031019 100%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[2rem] border border-white/10 bg-white/[0.06] shadow-2xl shadow-slate-950/30 backdrop-blur-xl;
+  }
+
+  .form-input {
+    @apply w-full rounded-2xl border border-white/10 bg-slate-950/35 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-300/50 focus:bg-slate-950/50;
   }
 }
